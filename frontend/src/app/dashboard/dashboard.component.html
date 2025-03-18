@@ -1,0 +1,41 @@
+<div [className]="'container-fluid mt-4'">
+    <div [className]="'display-4 text-center mt-4'">Sales Forecasting Dashboard</div>
+
+    <div [className]="'d-flex col gap-3 mt-5'">
+        <div [className]="'container d-flex flex-column gap-5'">
+            <!-- Sales Prediction Input -->
+            <div [className]="'mb-3'">
+                <label for="month" [className]="'form-label'">Enter Month (1-12):</label>
+                <input type="number" id="month" #monthInput [className]="'form-control w-50 d-inline'">
+                <button (click)="getSalesPrediction(monthInput)" [className]="'btn btn-primary ms-2'">Predict
+                    Sales</button>
+            </div>
+
+            <p *ngIf="predictedSales" [className]="'alert alert-success'">Predicted Sales: {{ predictedSales }}</p>
+
+            <!-- Sales Chart -->
+            <div [className]="'card p-3'">
+                <canvas #salesChart></canvas>
+            </div>
+        </div>
+
+
+        <div [className]="'container d-flex flex-column gap-5'">
+            <!-- Customer Segmentation Input -->
+            <div [className]="'d-flex gap-2 mb-3'">
+                <label [className]="'form-label'">Enter Customer Features (Age, Income, Score):</label>
+                <input type="text" id="features" #featuresInput [className]="'form-control w-50 d-inline'">
+                <button (click)="getCustomerSegment(featuresInput)" [className]="'btn btn-primary ms-2'">Segment
+                    Customer</button>
+            </div>
+
+            <p *ngIf="customerSegment !== null" [className]="'alert alert-info'">Customer Segment: {{ customerSegment }}
+            </p>
+
+            <!-- Customer Segment Chart -->
+            <div [className]="'container col-sm-6'">
+                <canvas #customerSegmentChart></canvas>
+            </div>
+        </div>
+    </div>
+</div>

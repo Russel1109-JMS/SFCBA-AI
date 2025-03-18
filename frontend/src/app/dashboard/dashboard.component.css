@@ -1,0 +1,17 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;  /* Set height to prevent collapse */
+    margin: 20px auto;
+}
+
