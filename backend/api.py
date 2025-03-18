@@ -5,6 +5,7 @@ from sklearn.cluster import KMeans
 import joblib
 from flask_cors import CORS
 import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "0"
 import tensorflow as tf
 from tensorflow import keras
 
